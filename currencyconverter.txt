@@ -1,0 +1,81 @@
+import java.util.*;
+import java.text.DecimalFormat;
+
+class Currency_Converter {
+    public static void main(String[] args) {
+        double rupee, dollar, pound, code, euro, KWD;
+        DecimalFormat f = new DecimalFormat("##.###");
+        Scanner sc = new Scanner(System.in);
+        System.out.println("\nEnter the currency code \n1:Rupees\n2:Dollar\n3:Pound\n4:Euro\n5:Kuwaiti dinar");
+        code = sc.nextInt();
+
+        if (code == 1) {
+            System.out.println("Enter amount in rupees:");
+            rupee = sc.nextFloat();
+            System.out.println("Select the currency you want to convert to:");
+            System.out.println("1. Dollar");
+            System.out.println("2. Pound");
+            System.out.println("3. Euro");
+            System.out.println("4. Kuwaiti dinar");
+            int currency = sc.nextInt();
+
+            if (currency == 1) {
+                dollar = rupee / 75;
+                System.out.println("Dollar : " + f.format(dollar));
+            } else if (currency == 2) {
+                pound = rupee / 101;
+                System.out.println("Pound : " + f.format(pound));
+            } else if (currency == 3) {
+                euro = rupee / 84;
+                System.out.println("Euro : " + f.format(euro));
+            } else if (currency == 4) {
+                KWD = rupee / 250;
+                System.out.println("Kuwaiti dinar : " + f.format(KWD));
+            } else {
+                System.out.println("Invalid Code!");
+            }
+        } else if (code == 2) {
+            System.out.println("Enter amount in dollar:");
+            dollar = sc.nextFloat();
+            System.out.println("Select the currency you want to convert to:");
+            System.out.println("1. Rupees");
+            System.out.println("2. Pound");
+            System.out.println("3. Euro");
+            System.out.println("4. Kuwaiti dinar");
+            int currency = sc.nextInt();
+
+            if (currency == 1) {
+                rupee = dollar * 75;
+                System.out.println("Rupees : " + f.format(rupee));
+            } else if (currency == 2) {
+                pound = dollar * 0.72;
+                System.out.println("Pound : " + f.format(pound));
+            } else if (currency == 3) {
+                euro = dollar * 0.88;
+                System.out.println("Euro : " + f.format(euro));
+            } else if (currency == 4) {
+                KWD = dollar * 0.30;
+                System.out.println("Kuwaiti dinar : " + f.format(KWD));
+            } else {
+                System.out.println("Invalid Code!");
+            }
+        } else if (code == 3) {
+            System.out.println("Enter amount in Pound:");
+            pound = sc.nextFloat();
+            System.out.println("Select the currency you want to convert to:");
+            System.out.println("1. Rupees");
+            System.out.println("2. Dollar");
+            System.out.println("3. Euro");
+            System.out.println("4. Kuwaiti dinar");
+            int currency = sc.nextInt();
+
+            if (currency == 1) {
+                rupee = pound * 101;
+                System.out.println("Rupees : " + f.format(rupee));
+            } else if (currency == 2) {
+                dollar = pound * 1.35;
+                System.out.println("Dollar : " + f.format(dollar));
+            }
+        }
+    }
+}
